@@ -129,7 +129,7 @@ class Script(scripts.Script):
                 
             with gr.Row(elem_id=eid):
                        with gr.Accordion(label="SixGod_K prompt word v1.65",open=False):
-                             gr.HTML('<a class="oldsix-tips" href="https://github.com/enochianborg/sd-webui-oldsix-prompt-N7MWH-English/">【使用说明书】')
+                             gr.HTML('<a class="oldsix-tips" href="https://github.com/enochianborg/sd-webui-oldsix-prompt-N7MWH-English/"> 【oldsix-tips】')
                             
                              textarea=gr.TextArea(self.json,elem_id=tid,visible=False)
                              traninput=gr.Textbox(elem_classes="old-six-traninput",visible=False,show_label="",placeholder="After inputting Chinese, press Enter to translate, and press [ALT+Q] to call out/hide. (Translator)")
@@ -154,9 +154,9 @@ class Script(scripts.Script):
                                         txtend=gr.Textbox(placeholder='Ending placeholder prompt word',show_label=False,elem_classes="oldsix-txt-end")
                                 with gr.Row():
                                     with gr.Column(scale=4):
-                                         btnRandom=gr.Button('random inspiration keywords',variant="primary")                                                               
+                                         btnRandom=gr.Button('Insert Random Keywords',variant="primary")                                                               
                                     with gr.Column(scale=4):  
-                                         gr.Button('Classification combination random',variant="primary",elem_classes="btn-crandom") 
+                                         gr.Button('Clear Random Entry',variant="primary",elem_classes="btn-crandom") 
                                     with gr.Column(scale=4):  
                                          btnsend=gr.Button('Send to prompt box',variant="primary",elem_classes="oldsix-btnSend") 
                                         
