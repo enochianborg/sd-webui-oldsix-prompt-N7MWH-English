@@ -129,7 +129,7 @@ class Script(scripts.Script):
                 
             with gr.Row(elem_id=eid):
                        with gr.Accordion(label="SixGod_K prompt word v1.65",open=False):
-                             gr.HTML('<a class="oldsix-tips" href="https://github.com/thisjam/sd-webui-oldsix-prompt/">【user's Guide】')
+                             gr.HTML('<a class="oldsix-tips" href="https://github.com/enochianborg/sd-webui-oldsix-prompt-N7MWH-English/">【使用说明书】')
                             
                              textarea=gr.TextArea(self.json,elem_id=tid,visible=False)
                              traninput=gr.Textbox(elem_classes="old-six-traninput",visible=False,show_label="",placeholder="After inputting Chinese, press Enter to translate, and press [ALT+Q] to call out/hide. (Translator)")
