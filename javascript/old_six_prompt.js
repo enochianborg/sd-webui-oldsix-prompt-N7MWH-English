@@ -79,7 +79,7 @@ function CreateEle(type,parentDom,css,html){
         }
     }
     if(!ishas){
-         //删除带权重
+         //Delete with weight
         if(elementprompt.value.includes(str+':')){
             const teststr=`${str},|\\(${str}:\\d+\\.\\d+\\),`
             const regex =new RegExp(teststr);    
@@ -87,7 +87,7 @@ function CreateEle(type,parentDom,css,html){
             elementprompt.value= elementprompt.value.replace(regex,'');
              
         }
-        //删除
+        //delete
         else{ 
             elementprompt.value= elementprompt.value.replace(str+',','');       
         }
@@ -101,7 +101,7 @@ function CreateEle(type,parentDom,css,html){
         return //
     }
     
-     //添加
+     //Add to
     let ul =e.target.dataset.pageindex==1 ? Elements.imgul : Elements.txtul 
     let cn=dom.innerHTML
     let en=str 
@@ -408,22 +408,22 @@ function move(){
             let istriggel=event.target.classList.contains("old-six-traninput");
             if(!istriggel)return
                 
-            // 获取div当前的x和y坐标
+            // Obtain div the current x and y coordinates
             var x = event.clientX - item.offsetLeft;
             var y = event.clientY - item.offsetTop;
             item.style.cursor = 'grabbing';
             document.onmousemove = function(event) {
-              // 获取鼠标当前的位置
+              // Get the current position of the mouse
               var newX = event.clientX - x;
               var newY = event.clientY - y;
           
-              // 设置div的新位置
+              // set up div new location
               item.style.left = newX + 'px';
               item.style.top = newY + 'px';
             };
           
             document.onmouseup = function() {
-              // 当鼠标松开时，移除mousemove和mouseup事件，以防止继续拖动
+              // when mouse is released，Remove mousemove andmouseup event，to prevent further dragging
               item.style.cursor = 'grab';
               document.onmousemove = null;
               document.onmouseup = null;
@@ -681,7 +681,7 @@ function handleDragLeave(e) {
         const currentX = e.clientX;
         const deltaX = currentX - initialX;
         if (deltaX > 0) {
-            // 向右拖动     
+            // Drag right     
             target.after(dragSrcEl)
         } else if (deltaX < 0) {
             target.before(dragSrcEl)
@@ -716,14 +716,15 @@ function handleDragEnd(e) {
   
 
 function preciseAddOrSub(a, b,isadd=true) {
-    let  scale = 1e12; // 选取一个适当的缩放因子
+    let  scale = 1e12; // Choose an appropriate scaling factor
+
     if(isadd){
          return (a * scale + b * scale) / scale;
     }
    
     return  (a * scale - b * scale) / scale;
 }
-//isAdd 加权重
+//isAdd weighted
 function ModifyWeidht(domli,cnkey,isAdd=true){
     let selectObj = selectPrompts[cnkey]
     let oldw = selectObj.w
@@ -782,14 +783,14 @@ function delLi(domli,cnkey){
 function hoverLi(searchText) {
     let textarea =getCurrentPromptsEle()
     const text = textarea.value;
-    // 寻找 searchText 在文本中的位置
+    // Look for searchText position in text
     const startIndex = text.indexOf(searchText);
     if (startIndex !== -1) {
         const endIndex = startIndex + searchText.length;    
-        // 设置选择范围
+        // Set selection range
         textarea.selectionStart = startIndex;
         textarea.selectionEnd = endIndex;
-        // 让文本框获取焦点
+        // Let the text box get focus
         textarea.focus();
         return[startIndex,endIndex]
     }
