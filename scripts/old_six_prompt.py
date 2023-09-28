@@ -102,7 +102,7 @@ def tanslate(cntext):
 
 class Script(scripts.Script):    
         rdlist=loadRandomList()
-        json= LoadTagsFile()
+        json=LoadTagsFile()
         randomIndex=0
         txtprompt=None
         isLockPrompt=False
